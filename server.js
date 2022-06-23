@@ -1,10 +1,10 @@
 const express = require('express');
 const app = express();
-const PORT = 8000;
 const {MongoClient, objectId} = require('mongodb')
 const cors = require('cors');
 const { response } = require('express');
 require('dotenv').config()
+const PORT = 8000;
 
 let db,
     dbConnectionStr = process.env.DB_STRING,
@@ -13,7 +13,7 @@ let db,
 
 MongoClient.connect(dbConnectionStr)
     .then(client => {
-        console.log('Connected to database')
+        console.log(`Connected to database`)
         db = client.db(dbName)
         collection = db.collection('movies')
     })
