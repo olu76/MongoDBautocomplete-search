@@ -17,7 +17,7 @@ MongoClient.connect(dbConnectionStr)
         db = client.db(dbName)
         collection = db.collection('movies')
     })
-
+// Middleware
 app.use(express.urlencoded({extended: true})) 
 app.use(express.json())
 app.use(cors())
